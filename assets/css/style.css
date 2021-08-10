@@ -1,133 +1,141 @@
-body{
+body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
     font-size: 15px;
     line-height: 1.6;
     color: #333;
 }
+
 *,
-*::before,
-*::after{
+*:before,
+*:after {
     box-sizing: border-box;
 }
 
-h1,h2,h3,h4,h5,h6{
+h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
 
-/*cONTAINER */
-.container{
+/* Container */
+.container {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
 }
-/*Intro*/
-.intro{
+
+/* Intro */
+.intro {
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 100%;
     height: 100vh;
-
-    background: url(../images/intro.jpg)
-    center no-repeat;
+    background: url("../images/intro.jpg") center no-repeat;
     -webkit-background-size: cover;
     background-size: cover;
-
 }
-.intro__inner{
+
+.intro__inner {
     width: 100%;
     max-width: 880px;
     margin: 0 auto;
     text-align: center;
 }
-.intro__suptitle{
-    margin-bottom: 20px;
-    font-size: 72px;
+
+.intro__title {
     color: #fff;
-    font-family: 'Kaushan Script', cursive;
-    text-align: center;
-}
-.intro__title{
-    color: #fff;
-    font-size: 150px;
+    font-size: 125px;
     font-weight: 700;
     text-transform: uppercase;
-    text-align: center  ;
     line-height: 1;
 }
-.intro__title::after{
+
+.intro__title:after {
     content: "";
     display: block;
     width: 60px;
     height: 3px;
-    margin: 60px auto ;
-
+    margin: 30px auto;
     background-color: #fff;
 }
 
-/*Header*/
-.header{
+.intro__suptitle {
+    margin-bottom: 20px;
+
+    font-family: 'Kaushan Script', cursive;
+    font-size: 72px;
+    color: #fff;
+}
+
+/* Header */
+.header {
     width: 100%;
+    padding-top: 30px;
+
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
-    padding-top: 30px;
 }
-.header__inner{
+
+.header__inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.header__logo{
+
+.header__logo {
     font-size: 30px;
     font-weight: 700;
-    color:#fff;
+    color: #fff;
 }
-/*Nav*/
-.nav{
-    text-transform: uppercase;
-    font-size: 14px;
 
+/* Nav */
+.nav {
+    font-size: 14px;
+    text-transform: uppercase;
 }
-.nav_link{
+
+.nav__link {
     display: inline-block;
     vertical-align: top;
-    position: relative;
     margin: 0 15px;
+    position: relative;
     color: #fff;
     text-decoration: none;
     transition: color .1s linear;
 }
-.nav_link:after{
+
+.nav__link:after {
     content: "";
     display: block;
     width: 100%;
     height: 3px;
-
     background-color: #fce38a;
     opacity: 0;
-
     position: absolute;
     top: 100%;
     left: 0;
     z-index: 1;
-
     transition: opacity .1s linear;
 }
-.nav_link:hover{
+
+.nav__link:hover {
     color: #fce38a;
 }
-.nav_link:hover::after{
-        display: block;        
+
+.nav__link:hover:after,
+.nav__link.active:after {
+    opacity: 1;
 }
-.nav_link.active{
+
+.nav__link.active {
     color: #fce38a;
 }
-/*Button*/
-.btn{
+
+/* Button */
+.btn {
     display: inline-block;
     vertical-align: top;
     padding: 8px 30px;
@@ -135,54 +143,67 @@ h1,h2,h3,h4,h5,h6{
     border: 3px solid #fff;
 
     font-size: 14px;
-    font-weight:700;
+    font-weight: 700;
     color: #fff;
     text-transform: uppercase;
-    text-decoration: none;  
-    transition: background ;
+    text-decoration: none;
 
-}   
-.btn:hover{
+    transition: background .1s linear, color .1s linear;
+}
+
+.btn:hover {
     background-color: #fff;
     color: #333;
 }
-/*Slider*/
-.slider{
+
+/* Slider */
+.slider {
+    width: 100%;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.slider__inner {
     display: flex;
     justify-content: space-between;
-    margin-top: 30px;
-
 }
-.slier__item{
+
+.slider__item {
     width: 23%;
     padding: 20px 0;
     position: relative;
 
-    border-top:3px solid #fff;
-
+    border-top: 3px solid #fff;
     opacity: .7;
+
     font-size: 18px;
-    color:#fff;
+    color: #fff;
     text-transform: uppercase;
 }
-.slider__item.active{
-    opacity: 1;
 
+.slider__item.active {
+    opacity: 1;
 }
-.slider__item.active::before{
+
+.slider__item.active:before {
+    content: "";
+    display: block;
     width: 70px;
     height: 3px;
 
-        background-color: #f38181;
+    background-color: #f38181;
 
     position: absolute;
-    top: 0;
-    left:0;
+    top: -3px;
+    left: 0;
     z-index: 1;
 }
 
-
-.slider__number{
+.slider__num {
     font-size: 24px;
     font-weight: 700;
 }
+
